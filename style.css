@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(204,212,252,1) 0%, rgba(228,183,255,1) 48%, rgba(255,191,204,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 450px;
+    min-height: 440px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    z-index: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(177, 113, 236);
+}
+
+.box:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-35deg, #ff3d00 -38%, #0400ff 100% );
+    transform: translate3d(5px, 35px, 0) scale(0.95);
+    filter: blur(30px);
+    opacity: var(0.54);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+
+.box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
+
+.game{
+    width: 100%;
+    height: 150px;
+    
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.you img{
+   width: 130px;
+    
+    
+   
+}
+.pc img{
+width: 130px;
+}
+    
+
+.select-move{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+}
+.rock img,.paper img,.scissor img{
+    width: 50px;
+    height: 50px;
+   rotate: -90deg;
+}
+.rock,.paper,.scissor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgb(177, 113, 236);
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.rock:hover,.paper:hover,.scissor:hover{
+    opacity: 1;
+    scale: 1.1;
+}
+.pcanime{
+    animation: rotateAnimationPc 1s ease-in-out;
+}
+@keyframes rotateAnimationPc {
+    50%{
+        rotate: -45deg;
+    }
+    
+    100%{
+        rotate: 45deg;
+    }
+}
+.anime{
+    animation: rotateAnimationPlayer 1s ease-in-out;
+}
+@keyframes rotateAnimationPlayer {
+    50%{
+        rotate: 45deg;
+    }
+    
+    100%{
+        rotate: -45deg;
+    }
+}
+.score{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(183, 141, 189);
+    border-radius: 8px;
+}
+.score{
+    color: white;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+.score-board{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+  
+}
+.score-board h2{
+    font-size: 30px;
+    line-height: 1;
+    text-align: center;
+}
+.reset-btn{
+    margin-top: 15px;
+    display: none;
+}
+.reset-btn button{
+    padding: 10px 20px;
+    background-color: rgb(177, 113, 236);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 800;
+    
+}
+@media screen and (max-width: 535px) {
+    .box {
+        width: 350px;
+    }
+}
